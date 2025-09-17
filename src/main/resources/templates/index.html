@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CSV Uploader</title>
+</head>
+<body>
+<h2>CSV Uploader</h2>
+<form method="post" enctype="multipart/form-data" action="/upload">
+    <input type="file" name="file" accept=".csv"/>
+    <button type="submit">Submit</button>
+</form>
+
+<div th:if="${results}">
+    <h3>Common projects of the top pair</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Employee ID #1 |</th>
+            <th>Employee ID #2 |</th>
+            <th>Project ID |</th>
+            <th>Days worked</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="r : ${results}">
+            <td th:text="${r.employeeId1}"></td>
+            <td th:text="${r.employeeId2}"></td>
+            <td th:text="${r.projectId}"></td>
+            <td th:text="${r.daysWorked}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
