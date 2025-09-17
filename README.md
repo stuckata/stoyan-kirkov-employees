@@ -7,4 +7,4 @@
 3. Choose a CSV file and submit it
 4. See the result
 
-* If an unsupported date format is used, it can be added in application.properties
+* If an unknown date format is used, it can be added in application.properties, and the app will start to support it.
